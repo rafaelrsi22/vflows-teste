@@ -15,6 +15,10 @@ function buildJSON() {
     return JSON.stringify(currentData);
 }
 
+function saveDataIntoStorage() {
+    localStorage.setItem('supplier-data', buildJSON());
+}
+
 function buildSupplierInfo(info) {
     const {
         socialReason,
@@ -29,12 +33,14 @@ function buildSupplierInfo(info) {
 
     currentData.razaoSocial = socialReason;
     currentData.cnpj = cnpj;
-    currentData.nomeFantasia = commercialName,
-    currentData.inscricaoEstadual = stateRegistration,
-    currentData.inscricaoMunicipal = municipalRegistration,
-    currentData.nomeContato = contactName,
-    currentData.telefoneContato = telephone,
-    currentData.emailContato = email
+    currentData.nomeFantasia = commercialName;
+    currentData.inscricaoEstadual = stateRegistration;
+    currentData.inscricaoMunicipal = municipalRegistration;
+    currentData.nomeContato = contactName;
+    currentData.telefoneContato = telephone;
+    currentData.emailContato = email;
+
+    saveDataIntoStorage();
 }
 
 function clearDataProducts() {
