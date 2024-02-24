@@ -22,3 +22,19 @@
 .hidden {
     display: none;
 }
+
+.spin {
+    margin: 0 auto;
+    width: 60px;
+    height: 60px;
+    border: 8px solid;
+    border-color: rgb(68, 68, 68) transparent rgb(68, 68, 68) transparent;
+    border-radius: 50%;
+    animation: spin 1.3s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

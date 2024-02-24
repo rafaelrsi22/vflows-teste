@@ -79,8 +79,14 @@ saveSupplierBtn.click(() => {
         buildProductInfo({productName, measureUnit, measureQuantity, unitValue, totalValue})
     }
 
+    startLoadingModal();
+
     const downloadAnchor = document.createElement('a');
     downloadAnchor.href = window.URL.createObjectURL(new Blob([buildJSON()]));
     downloadAnchor.download = 'result.json';
     downloadAnchor.click();
+
+    setTimeout(() => {
+        stopLoadingModal();
+    }, 1000);
 });

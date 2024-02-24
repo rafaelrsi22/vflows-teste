@@ -8,7 +8,6 @@ cepInput.on("focusout", async () => {
 
     try {
         const addressInfo = await getCEPInfo(cep);
-        
         addressStreetInput.val(addressInfo.address);
         cityInput.val(addressInfo.city);
         stateInput.val(addressInfo.state);
