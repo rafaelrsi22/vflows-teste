@@ -9,7 +9,7 @@ function isRequiredInputsValidated() {
             validated = false;
             invalidateInput(inputElement);
 
-            inputElement.on("change", () => removeInputInvalidation(inputElement));
+            inputElement.on("change focusin", () => removeInputInvalidation(inputElement));
         }
     }
 

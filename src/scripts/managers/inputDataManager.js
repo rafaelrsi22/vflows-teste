@@ -103,10 +103,14 @@ saveSupplierBtn.click(() => {
 
     startLoadingModal();
 
+    const json = buildJSON();
     const downloadAnchor = document.createElement('a');
-    downloadAnchor.href = window.URL.createObjectURL(new Blob([buildJSON()]));
+
+    downloadAnchor.href = window.URL.createObjectURL(new Blob([json]));
     downloadAnchor.download = 'result.json';
     downloadAnchor.click();
+
+    console.log(json);
 
     setTimeout(() => {
         stopLoadingModal();
