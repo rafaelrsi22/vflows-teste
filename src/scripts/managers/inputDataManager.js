@@ -7,10 +7,6 @@ addProductBtn.click(() => {
     const newProductHTML = createProductElement(productId);
 
     insertProductIntoList(newProductHTML);
-
-    const deleteButton = $($(`#${productId}`).children(".delete-button")[0]);
-    
-    deleteButton.click(() => deleteProductFromListById(productId));
 });
 
 addAttachmentBtn.click(() => {
@@ -54,6 +50,27 @@ addAttachmentBtn.click(() => {
 
 saveSupplierBtn.click(() => {
     buildSupplierInfo({
-        
-    })
+        socialReason: $("#social-reason").val(),
+        cnpj: $("#cnpj").val(),
+        commercialName: $("#commercial-name").val(),
+        stateRegistration: $("#state-registration").val(),
+        contactName: $("#contact-name").val(),
+        telephone: $("#telephone").val(),
+        email: $("#email").val()
+    });
+
+    clearDataProducts();
+    clearDataAttachments();
+
+    for (const productElement of $(".product-element")) {
+        const productName = productElement.getElementsByClassName("product-name")[0].value;
+        const measureUnit = productElement.getElementsByClassName("measure-unit")[0].value;
+        const measureQuantity = productElement.getElementsByClassName("measure-quantity")[0].value;
+        const unitValue = productElement.getElementsByClassName("unit-value")[0].value;
+        const totalValue = productElement.getElementsByClassName("total-value")[0].value;
+
+        buildProductInfo({productName, measureUnit, measureQuantity, unitValue, totalValue})
+    }
+
+    console.log(currentData);
 });

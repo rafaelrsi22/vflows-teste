@@ -12,7 +12,7 @@ const currentData = {
 };
 
 function buildSupplierDate() {
-    
+
 }
 
 function buildSupplierInfo(info) {
@@ -22,13 +22,6 @@ function buildSupplierInfo(info) {
         commercialName,
         stateRegistration,
         municipalRegistration,
-        cep,
-        addressStreet,
-        addressNumber,
-        addressComplement,
-        district,
-        city,
-        state,
         contactName,
         telephone,
         email
@@ -42,6 +35,14 @@ function buildSupplierInfo(info) {
     currentData.nomeContato = contactName,
     currentData.telefoneContato = telephone,
     currentData.emailContato = email
+}
+
+function clearDataProducts() {
+    currentData.produtos = [];
+}
+
+function clearDataAttachments() {
+    currentData.anexos = [];
 }
 
 function buildProductInfo(info) {
