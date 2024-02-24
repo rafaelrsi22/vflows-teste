@@ -60,7 +60,6 @@ saveSupplierBtn.click(() => {
     });
 
     clearDataProducts();
-    clearDataAttachments();
 
     for (const productElement of $(".product-element")) {
         const productName = productElement.getElementsByClassName("product-name")[0].value;
@@ -72,5 +71,8 @@ saveSupplierBtn.click(() => {
         buildProductInfo({productName, measureUnit, measureQuantity, unitValue, totalValue})
     }
 
-    console.log(currentData);
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.href = window.URL.createObjectURL(new Blob([buildJSON()]));
+    downloadAnchor.download = 'result.json';
+    downloadAnchor.click();
 });

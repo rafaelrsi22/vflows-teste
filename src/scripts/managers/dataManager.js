@@ -11,8 +11,8 @@ const currentData = {
     anexos: []
 };
 
-function buildSupplierDate() {
-
+function buildJSON() {
+    return JSON.stringify(currentData);
 }
 
 function buildSupplierInfo(info) {
