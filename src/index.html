@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Products</title>
+        <link rel="stylesheet" type="text/css" href="https://fluig.totvs.com/style-guide/css/fluig-style-guide.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="./styles/style.css">
+        <link rel="stylesheet" type="text/css" href="./styles/modal.css">
+    </head>
+    <body>
+        <div class="fluig-style-guide">
+            <div id="modal" class="hidden">
+                <div class="modal-container">
+                    <div class="modal-header fs-display-flex fs-justify-content-space-between fs-align-items-center">
+                        <h3 class="modal-title">Title</h3>
+                        <i class="close modal-close"></i>
+                    </div>
+                    <div class="modal-body">
+                        
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="text-center fs-font-bold">CADASTRO FORNECEDOR/PRODUTOS</h1>
+            <main>
+                <div id="supplier-data" class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2 class="panel-title fs-font-bold">Dados do Fornecedor</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="social-reason">Razão Social</label>
+                                <input name="socialReason" type="text" class="form-control" id="social-reason" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="cnpj">CNPJ</label>
+                                <input name="cnpj" type="text" class="form-control" id="cnpj" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="commercial-name">Nome Fantasia</label>
+                                <input name="commercialName" type="text" class="form-control" id="commercial-name" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="state-registration">Inscrição Estadual</label>
+                                <input name="stateRegistration" type="text" class="form-control" id="state-registration">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="municipal-registration">Inscrição Municipal</label>
+                                <input name="municipalRegistration" type="text" class="form-control" id="municipal-registration">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="cep">CEP</label>
+                                <input name="cep" type="text" class="form-control" id="cep" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-8">
+                                <label for="address-street">Endereço</label>
+                                <input name="addressStreet" type="text" class="form-control" id="address-street" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="address-number">Número</label>
+                                <input name="addressNumber" type="text" class="form-control" id="address-number" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <label for="address-complement">Complemento</label>
+                                <input name="addressComplement" type="text" class="form-control" id="address-complement" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="district">Bairro</label>
+                                <input name="district" type="text" class="form-control" id="district" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="city">Municipio</label>
+                                <input name="city" type="text" class="form-control" id="city" required>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="state">Estado</label>
+                                <input name="state" type="text" class="form-control" id="state" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-6">
+                                <label for="contact-name">Nome da Pessoa de Contato</label>
+                                <input name="contactName" type="text" class="form-control" id="contact-name" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="telephone">Telefone</label>
+                                <input name="telephone" type="tel" class="form-control" id="telephone" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="email">E-mail</label>
+                                <input name="email" type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="products-data" class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2 class="panel-title fs-font-bold">Produtos</h2>
+                    </div>
+                    <div class="panel-body">
+                        <ul id="product-list" class="list-group">
+                            <!-- <li class="list-group-item fs-display-flex fs-justify-content-space-between fs-align-items-center">
+                                <button type="button" class="icon-btn btn btn-danger">
+                                    <img src="../assets/trash.png" alt="">
+                                </button>
+                                <div class="fs-full-width">
+                                    <h3 class="">Produto 1</h3>
+                                    <div class="card card-horizontal">
+                                        <div class="card-thumb">
+                                            <i class="illustration illustration-layout-group illustration-md" aria-hidden="true" ></i>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row fs-full-width">
+                                                <div class="form-group col-md-12">
+                                                    <label for="product-name">Produto</label>
+                                                    <input name="productName" type="text" class="form-control" id="product-name" required>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="measure-unit">UND. Medida</label>
+                                                    <select name="measureUnit" id="measure-unit" class="form-control" required>
+                                                        <option value="teste">teste</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="measure-quantity">QTDE. em Estoque</label>
+                                                    <input name="measureQuantity" type="number" class="form-control" id="measure-quantity" min="0" value="0" required>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="unit-value">Valor Unitário</label>
+                                                    <input name="unitValue" type="number" class="form-control" id="unit-value" min="0" value="0" required>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                    <label for="total-value">Valor Total</label>
+                                                    <input name="totalValue" type="number" class="form-control" id="total-value" min="0" value="0" required disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li> -->
+                        </ul>
+                        <button type="success" class="fs-full-width btn btn-success fs-font-bold" id="add-product">Adicionar Produto</button>
+                        </form>
+                    </div>
+                </div>
+                <div id="attachments" class="panel panel-info">
+                    <div class="panel-heading">
+                        <h2 class="panel-title fs-font-bold">Anexos</h2>
+                    </div>
+                    <div class="panel-body">
+                        <ul id="attachment-list" class="list-group">
+                            <!-- <li class="list-group-item fs-display-flex fs-align-items-center">
+                                <button type="button" class="icon-btn btn btn-danger">
+                                    <img src="../assets/trash.png" alt="">
+                                </button>
+                                <button type="button" class="icon-btn btn btn-info">
+                                    <img src="../assets/eye.png" alt="">
+                                </button>
+                                <h3 style="margin-left: 20px;">Documento anexo 1</h3>
+                            </li>
+                            <li class="list-group-item fs-display-flex fs-align-items-center">
+                                <button type="button" class="icon-btn btn btn-danger">
+                                    <img src="../assets/trash.png" alt="">
+                                </button>
+                                <button type="button" class="icon-btn btn btn-info">
+                                    <img src="../assets/eye.png" alt="">
+                                </button>
+                                <h3 style="margin-left: 20px;">Documento anexo 2</h3>
+                            </li> -->
+                        </ul>
+                        <button type="success" class="fs-full-width btn btn-success fs-font-bold" id="add-attachment">Incluir Anexo</button>
+                    </div>
+                </div>
+                <input type="submit" class="fs-full-width btn btn-success fs-font-bold fs-margin-auto" id="save-supplier" value="Salvar Fornecedor">
+            </main>
+        </div>
+
+        <script src="./scripts/managers/dataManager.js"></script>
+        <script src="./scripts/controllers/attachmentController.js"></script>
+        <script src="./scripts/controllers/productController.js"></script>
+        <script src="./scripts/controllers/modalController.js"></script>
+        <script src="./scripts/managers/inputDataManager.js"></script>
+        <script src="./scripts/controllers/addressController.js"></script>
+        <script src="./scripts/index.js"></script>
+    </body>
+</html>

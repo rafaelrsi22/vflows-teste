@@ -1,0 +1,24 @@
+#modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#modal .modal-container {
+    margin: 0 50px;
+    width: 500px;
+    min-height: 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}

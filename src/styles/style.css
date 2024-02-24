@@ -1,0 +1,39 @@
+.list-group-item {
+    border: none !important;
+}
+
+.icon-btn {
+    width: 50px;
+    height: 50px;
+    padding: 0 !important;
+}
+
+#products-data li {
+    gap: 20px;
+}
+
+#attachments li {
+    gap: 15px;
+}
+
+#add-product {
+    height: 40px;
+}
+
+#save-supplier {
+    max-width: 20%;
+}
+
+button.fs-margin-auto, input.fs-margin-auto {
+    display: block !important;
+}
+
+label:has(+ input:required)::after, label:has(+ select:required)::after {
+    content: " *";
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    background-image: url(/assets/close.png);
+}
