@@ -42,7 +42,15 @@ addAttachmentBtn.click(() => {
             insertAttachmentIntoList(newAttachmentItem);
 
             const deleteButton = $($(`#${attachmentId}`).children(".delete-button")[0]);
+            const viewButton = $($(`#${attachmentId}`).children(".view-button")[0]);
+
             deleteButton.click(() => deleteAttachmentFromList(attachmentId));
+            viewButton.click(() => {
+                const downloadAnchor = document.createElement('a');
+                downloadAnchor.download = file.name;
+                downloadAnchor.href = reader.result;
+                downloadAnchor.click();
+            });
         }
         reader.readAsDataURL(file);
     });

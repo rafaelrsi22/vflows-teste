@@ -6,7 +6,7 @@ function createAttachmentElement(attachmentId) {
             <button type="button" class="delete-button icon-btn btn btn-danger">
                 <img src="../assets/trash.png" alt="">
             </button>
-            <button type="button" class="icon-btn btn btn-info">
+            <button type="button" class="view-button icon-btn btn btn-info">
                 <img src="../assets/eye.png" alt="">
             </button>
             <h3 style="margin-left: 20px;">Documento anexo ${getAttachmentLength()}</h3>
