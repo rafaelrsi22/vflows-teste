@@ -8,6 +8,9 @@ cepInput.on("focusout", async () => {
 
     try {
         const addressInfo = await getCEPInfo(cep);
+        if (!addressInfo.city) {
+            throw new Error('Invalid CEP');
+        }
 
         addressStreetInput.val(addressInfo.address);
         cityInput.val(addressInfo.city);
