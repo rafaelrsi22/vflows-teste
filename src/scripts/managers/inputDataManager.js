@@ -7,6 +7,9 @@ addProductBtn.click(() => {
     const newProductHTML = createProductElement(productId);
 
     insertProductIntoList(newProductHTML);
+
+    const deleteButton = $($(`#${productId}`).children(".delete-button")[0]);
+    deleteButton.click(() => deleteProductFromListById(productId));
 });
 
 addAttachmentBtn.click(() => {
@@ -57,6 +60,11 @@ addAttachmentBtn.click(() => {
 });
 
 saveSupplierBtn.click(() => {
+    if (!isRequiredInputsValidated() || !isProductsLengthValid() || !isAttachmentLengthValid()) {
+        console.log('inputs not validated')
+        return;
+    }
+
     buildSupplierInfo({
         socialReason: $("#social-reason").val(),
         cnpj: $("#cnpj").val(),

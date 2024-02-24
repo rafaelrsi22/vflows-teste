@@ -8,14 +8,18 @@ cepInput.on("focusout", async () => {
 
     try {
         const addressInfo = await getCEPInfo(cep);
+
         addressStreetInput.val(addressInfo.address);
         cityInput.val(addressInfo.city);
         stateInput.val(addressInfo.state);
+
+        removeInputInvalidation(cepInput);
     } catch(e) {
         if (cep.replace(' ', '') === '') {
             return;
         }
 
+        invalidateInput(cepInput);
         console.log("Cep invalido!");
     }
 });

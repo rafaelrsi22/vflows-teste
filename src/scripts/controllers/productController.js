@@ -66,5 +66,9 @@ function deleteProductFromListById(productId) {
 }
 
 function getProductLength() {
-    return productList.children().length + 1;
+    return getRawProductLength() + 1;
+}
+
+function getRawProductLength() {
+    return productList.children().length;
 }

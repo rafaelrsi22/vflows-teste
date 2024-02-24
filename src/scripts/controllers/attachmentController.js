@@ -36,5 +36,9 @@ function deleteAttachmentFromList(attachmentId) {
 }
 
 function getAttachmentLength() {
-    return attachmentList.children().length + 1;
+    return getRawAttachmentLength() + 1;
+}
+
+function getRawAttachmentLength() {
+    return attachmentList.children().length
 }
