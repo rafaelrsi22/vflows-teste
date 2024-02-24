@@ -8,7 +8,21 @@ addProductBtn.click(() => {
 
     insertProductIntoList(newProductHTML);
 
-    const deleteButton = $($(`#${productId}`).children(".delete-button")[0]);
+    const productItem = $(`#${productId}`);
+
+    const deleteButton = $(productItem.children(".delete-button")[0]);
+
+    const quantityInput = $(productItem.find(".quantity")[0]);
+    const unitValueInput = $(productItem.find('.unit-value')[0]);
+    const totalValue = $(productItem.find('.total-value')[0]);
+
+    const getTotalValue = () => parseInt(quantityInput.val()) * parseFloat(unitValueInput.val())
+
+    console.log(quantityInput, unitValueInput)
+
+    quantityInput.on("change", () => totalValue.val(getTotalValue()));
+    unitValueInput.on("change", () => totalValue.val(getTotalValue()));
+
     deleteButton.click(() => deleteProductFromListById(productId));
 });
 
@@ -80,7 +94,7 @@ saveSupplierBtn.click(() => {
     for (const productElement of $(".product-element")) {
         const productName = productElement.getElementsByClassName("product-name")[0].value;
         const measureUnit = productElement.getElementsByClassName("measure-unit")[0].value;
-        const measureQuantity = productElement.getElementsByClassName("measure-quantity")[0].value;
+        const measureQuantity = productElement.getElementsByClassName("quantity")[0].value;
         const unitValue = productElement.getElementsByClassName("unit-value")[0].value;
         const totalValue = productElement.getElementsByClassName("total-value")[0].value;
 

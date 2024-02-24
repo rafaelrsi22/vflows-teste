@@ -21,12 +21,13 @@ function createProductElement(productId) {
                                 <div class="form-group col-md-3">
                                     <label for="measure-unit">UND. Medida</label>
                                     <select name="measureUnit" id="measure-unit" class="measure-unit form-control" required>
-                                        <option value="teste">teste</option>
+                                        <option value="t1">placeholder</option>
+                                        <option value="t2">inclua outros</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="measure-quantity">QTDE. em Estoque</label>
-                                    <input name="measureQuantity" type="number" class="measure-quantity form-control" id="measure-quantity" min="0" value="0" required>
+                                    <input name="quantity" type="number" class="quantity form-control" id="quantity" min="0" value="0" step="1" required>
                                 </div>
                                 <div class="form-group col-md-3">
                                     <label for="unit-value">Valor Unitário</label>
